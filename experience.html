@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" content="width=device-width, initial-scale=1.0">
+    <title>K&R</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+      <script src="script.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- the link above gives me the R icons-->
+    <style>
+    .container-1 {margin:310px auto;
+    }
+    #mixedSlider {
+      position: relative;
+    }
+    #mixedSlider .MS-content {
+      white-space: nowrap;
+      overflow: hidden;
+      margin: 0 5%;
+    }
+    #mixedSlider .MS-content .item {
+      display: inline-block;
+      width: 33.3333%;
+      position: relative;
+      vertical-align: top;
+      overflow: hidden;
+      height: 100%;
+      white-space: normal;
+      padding: 0 30px;
+    }
+    @media (max-width: 991px) {
+      #mixedSlider .MS-content .item {
+        width: 100%;
+      }
+    }
+    @media (max-width: 767px) {
+      #mixedSlider .MS-content .item {
+        width: 100%;
+      }
+    }
+    #mixedSlider .MS-content .item .imgTitle {
+      position: relative;
+    }
+    #mixedSlider .MS-content .item .imgTitle .blogTitle {
+      margin: 0;
+      text-align: left;
+      letter-spacing: 2px;
+      color: transparent;
+      font-style: bold;
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.5);
+      width: 100%;
+      bottom: 0;
+      font-weight: bold;
+      padding: 0 0 2px 10px;
+    }
+    #mixedSlider .MS-content .item .imgTitle img {
+      height: auto;
+      width: 100%;
+    }
+    #mixedSlider .MS-content .item p {
+      font-size: 16px;
+      margin: 2px 10px 0 5px;
+      text-indent: 15px;
+    }
+    #mixedSlider .MS-content .item a {
+      float: right;
+      margin: 0 20px 0 0;
+      font-size: 16px;
+      font-style: bold;
+      color: rgba(173, 0, 0, 0.82);
+      font-weight: 200;
+      letter-spacing: 1px;
+      transition: linear 0.1s;
+    }
+    #mixedSlider .MS-content .item a:hover {
+      text-shadow: 0 0 1px grey;
+    }
+    #mixedSlider .MS-controls button {
+      position: absolute;
+      border: none;
+      background-color: transparent;
+      outline: 0;
+      font-size: 50px;
+      top: 95px;
+      color: rgba(0, 0, 0, 0.4);
+      transition: 0.15s linear;
+    }
+    #mixedSlider .MS-controls button:hover {
+      color: rgba(0, 0, 0, 0.8);
+    }
+    @media (max-width: 992px) {
+      #mixedSlider .MS-controls button {
+        font-size: 30px;
+      }
+    }
+    @media (max-width: 767px) {
+      #mixedSlider .MS-controls button {
+        font-size: 20px;
+      }
+    }
+    #mixedSlider .MS-controls .MS-left {
+      left: 10px;
+    }
+    @media (max-width: 767px) {
+      #mixedSlider .MS-controls .MS-left {
+        left: 10px;
+      }
+    }
+    #mixedSlider .MS-controls .MS-right {
+      right: 10px;
+    }
+    @media (max-width: 767px) {
+      #mixedSlider .MS-controls .MS-right {
+        right: 10px;
+      }
+    }
+    #basicSlider { position: relative; }
+
+    #basicSlider .MS-content {
+      white-space: nowrap;
+      overflow: hidden;
+      margin: 0 2%;
+      height: 50px;
+    }
+
+    #basicSlider .MS-content .item {
+      display: inline-block;
+      width: 20%;
+      position: relative;
+      vertical-align: top;
+      overflow: hidden;
+      height: 100%;
+      white-space: normal;
+      line-height: 50px;
+      vertical-align: middle;
+    }
+    @media (max-width: 991px) {
+
+    #basicSlider .MS-content .item { width: 25%; }
+    }
+    @media (max-width: 767px) {
+
+    #basicSlider .MS-content .item { width: 35%; }
+    }
+    @media (max-width: 500px) {
+
+    #basicSlider .MS-content .item { width: 50%; }
+    }
+
+    #basicSlider .MS-content .item a {
+      line-height: 50px;
+      vertical-align: middle;
+    }
+
+    #basicSlider .MS-controls button { position: absolute; }
+
+    #basicSlider .MS-controls .MS-left {
+      top: 35px;
+      left: 10px;
+    }
+
+    #basicSlider .MS-controls .MS-right {
+      top: 35px;
+      right: 10px;
+    }
+    </style>
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse">
+
+      <div class="container-fluid" style="margin-top: 0;">
+        <div class="navbar-header" style="margin-top: 0;">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="docs/images/logo.png" alt="logo" style="margin-top:-17px;"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav" style="display: inline-block;">
+            <li class="active"><a href="index.html" style="background-color:transparent; color: white;" class="btn-1">HOME</a></li>
+            <li><a href="about.html" class="btn-1" style="background-color:transparent; color: white;">ABOUT</a></li>
+            <li><a href="experience.html" class="btn-1" style="background-color:transparent; color: white;">UX/UI</a></li>
+            <li><a href="contact.html" class="btn-1" style="background-color:transparent; color: white;">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="section group">
+
+      <div class="col span_1_of_2">
+        <div class="card">
+          <h2>UX/UI</h2>
+          <h5>On my motto, Nov 5, 2021</h5>
+          <p style="color:black;">These thoughts were combined in my new webdesign project "Knowledge and Reason" or simply K&R. The two concepts are employed to convey messages in which design, forms, texture, contrast, perspective and movement are interconnected. I begin openning the home of this webpage with a reel in which I blend three objects, i.e., frame, close-up and movement with different levels of image motion. Up to a certain extent, an interesting web for me tells me a story.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container-2">
+    <div id="mixedSlider">
+                        <div class="MS-content">
+                            <div class="item">
+                                <div class="imgTitle">
+                                    <h2 class="blogTitle"></h2>
+                                    <img src="docs/images/jazz.jpg" alt="" />
+                                </div>
+                                <p style="color:black; font-weight: 100; font-size:11px;"><br>Jazz is a project in which I combine the idea of movement with very a very light interface. Talking to a friend of mine he mentioned that people in Barcelona when they look for a bar or a show place on internet they expect to see the music on. Well, he's an expert on that...<br><br></p>
+                                <a href="https://wemigliari.github.io/jazz/" target="_blank" style="color:black; text-decoration:none; font-family:Helvetica;">MOTTO</a>
+                            </div>
+                            <div class="item">
+                                <div class="imgTitle">
+                                    <h2 class="blogTitle"></h2>
+                                    <img src="docs/images/data.jpg" alt="" />
+                                </div>
+                               <p style="color:black; font-weight: 100; font-size:11px;"><br>Polos is a giant project with an objective of building a data lake. We have collected official data on environment, socioeconomic matters, mining operations and health from Brazil and other parts of the world. Let's systematize, visualize and analyse data ... <br><br></p>
+                                <a href="https://wemigliari.github.io/polos/" target="_blank" style="color:black; text-decoration:none; font-family:Helvetica;">DATA ANALYTICS</a>
+                            </div>
+                            <div class="item">
+                                <div class="imgTitle">
+                                    <h2 class="blogTitle"></h2>
+                                    <img src="docs/images/iot.jpg" alt="" />
+                                </div>
+                               <p style="color:black; font-weight: 100; font-size:11px;"><br>Internet of Things is a project born after a conversation with an acquaintance on how an interface can bring forward a link to the world of IoT for non-conventional cars without necessarily using a cliché image of an automobile. Well, as other engineers he said the future is in the sky... <br><br></p>
+                                <a href="https://wemigliari.github.io/IoT/" target="_blank" style="color:black; text-decoration:none; font-family:Helvetica;">INTERNET OF THINGS</a>
+                            </div>
+
+                        </div>
+                        <div class="MS-controls">
+                            <button class="MS-left"><i class="fa fa-angle-left" aria-hidden="true" style="color:black;"></i></button>
+                            <button class="MS-right"><i class="fa fa-angle-right" aria-hidden="true" style="color:black;"></i></button>
+                        </div>
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="js/multislider.js"></script>
+    <script>
+    $('#basicSlider').multislider({
+    			continuous: true,
+    			duration: 2000
+    		});
+    		$('#mixedSlider').multislider({
+    			duration: 750,
+    			interval: 3000
+    		});
+    </script>
+    </body>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-36251023-1']);
+      _gaq.push(['_setDomainName', 'jqueryscript.net']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+    <footer>
+      <div class="footer-dark">
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>Services</h3>
+                            <ul>
+                                <li><a href="services.html">Web design</a></li>
+                                <li><a href="services.html">Development</a></li>
+                                <li><a href="services.html">Data Analytics & B2B</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>Projects</h3>
+                            <ul>
+                              <li><a href="services.html">APIs</a></li>
+                              <li><a href="services.html">Chats & AI</a></li>
+                              <li><a href="services.html">Lab Experiments</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 item text">
+                            <h3>K&R</h3>
+                            <p>Our main goal is to create intuitive and easy-going webpages to increase the users experience and interface. We invest much time in research to understand the needs of people while they navigate on the internet. One of our assets is the way we explore images, videos and reels. For more information, contact us.</p>
+                        </div>
+                        <div class="col item social"><a class="active" href="https://github.com/wemigliari" target="_blank"><i class="fa fa-1x fab fa-github" style="color:white;"></i></a>
+                          <a href="https://rpubs.com/wemigliari" target="_blank"><i class="fa fa-1x fab fa-r-project" style="color:white;"></i></a>
+                          <a class="active" href="https://www.python.org/" target="_blank"><i class="fa fa-1x fab fa-python" style="color:white;"></i></a>
+                            <a href="https://www.instagram.com/wemigliari/" target="_blank"><i class="icon ion-social-instagram"></i></a>
+                        </div>
+                    </div>
+                    <p class="copyright">&copy; K&R | W. Migliari</p>
+                </div>
+            </footer>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js">
+    </script>
+    <script>
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+    const colors = [
+      "#b4b2b5",
+      "#dfd73f",
+      "#6ed2dc",
+      "#66cf5d",
+      "#c542cb",
+      "#d0535e",
+      "#3733c9"
+    ];
+    let linePos = 0,
+      rAF;
+
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+
+    function texts(color) {
+      ctx.font = "20vh Bungee Outline";
+      ctx.shadowBlur = 30;
+      ctx.shadowColor = color;
+      ctx.fillStyle = color;
+      ctx.setTransform(1, -0.15, 0, 1, 0, -10);
+      ctx.fillText("K", innerWidth / 2, innerHeight / 2 - 5);
+
+      ctx.fillStyle = "white";
+      ctx.shadowBlur = 30;
+      ctx.shadowColor = color;
+      ctx.fillText("K", innerWidth / 2, innerHeight / 2);
+
+      ctx.font = "18vh Bungee Inline";
+      ctx.shadowBlur = 30;
+      ctx.shadowColor = color;
+      ctx.fillStyle = "#fff";
+      ctx.setTransform(1, -0.15, 0, 1, 0, -10);
+      ctx.fillText(
+        "&R",
+        innerWidth / 2,
+        innerHeight / 2 + innerHeight / 10
+      );
+
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+    }
+
+    function glitch() {
+      rAF = window.requestAnimationFrame(glitch);
+
+      ctx.fillStyle = "#1a191c";
+      ctx.fillRect(0, 0, innerWidth, innerHeight);
+
+      texts(colors[Math.floor(Math.random() * 7)]);
+      ctx.shadowBlur = 0;
+      ctx.shadowColor = "none";
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+      for (let i = 0; i < 1000; i++) {
+        ctx.fillStyle = `rgba(255, 255, 255, ${Math.random() * 0.01})`;
+        ctx.fillRect(
+          Math.floor(Math.random() * innerWidth),
+          Math.floor(Math.random() * innerHeight),
+          Math.floor(Math.random() * 30) + 1,
+          Math.floor(Math.random() * 30) + 1
+        );
+
+        ctx.fillStyle = `rgba(0,0,0,${Math.random() * 0.1})`;
+        ctx.fillRect(
+          Math.floor(Math.random() * innerWidth),
+          Math.floor(Math.random() * innerHeight),
+          Math.floor(Math.random() * 25) + 1,
+          Math.floor(Math.random() * 25) + 1
+        );
+      }
+
+      ctx.fillStyle = colors[Math.floor(Math.random() * 40)];
+      ctx.fillRect(
+        Math.random() * innerWidth,
+        Math.random() * innerHeight,
+        Math.random() * innerWidth,
+        Math.random() * innerHeight
+      );
+      ctx.setTransform(1, 0, 0, .8, .2, 0);
+
+
+    }
+
+    glitch();
+
+    window.addEventListener('resize', () => {
+      canvas.width = innerWidth;
+      canvas.height = innerHeight;
+    });
+    </script>
+
+  </body>
+</html>

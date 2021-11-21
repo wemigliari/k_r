@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" content="width=device-width, initial-scale=1.0">
+  <title>K&R</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+
+  <script>
+    function SubForm (){
+      $.ajax({
+        url:"https://api.apispreadsheets.com/data/13784/",
+        type:"post",
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Your subscription has been successfully registered!")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+      });
+    }
+  </script>
+  <!-- the link above gives me the R icons-->
+</head>
+  <body>
+    <nav class="navbar navbar-inverse">
+
+      <div class="container-fluid" style="margin-top: 0;">
+        <div class="navbar-header" style="margin-top: 0;">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="docs/images/logo.png" alt="logo" style="margin-top:-17px;"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav" style="display: inline-block;">
+            <li class="active"><a href="index.html" style="background-color:transparent; color: white;" class="btn-1">HOME</a></li>
+            <li><a href="about.html" class="btn-1" style="background-color:transparent; color: white;">ABOUT</a></li>
+            <li><a href="experience.html" class="btn-1" style="background-color:transparent; color: white;">UX/UI</a></li>
+            <li><a href="contact.html" class="btn-1" style="background-color:transparent; color: white;">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--Section: Contact v.2-->
+    <div class="group container-2">
+      <section class="mb-4">
+
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-left my-4"></h2>
+    <!--Section description-->
+    <p style="color:black;" class="text-left w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly.</p>
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="https://formsubmit.co/wemigliari@gmail.com" method="POST">
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" placeholder="Your name"required class="form-control">
+                            <label for="name" class=""></label>
+                        </div>
+                    </div>
+
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input class="form-control" type="email" id="email" name="email" placeholder="Email address">
+                            <label for="email" class=""></label>
+                        </div>
+                    </div>
+
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="subject" name="subject" placeholder="Subject"class="form-control">
+                            <input type="hidden" name="_next" value="https://wemigliari.github.io/k_r/thankyou">
+                            <label for="subject" class=""></label>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" placeholder="Write your message here." rows="2" class="form-control md-textarea"></textarea>
+                            <label for="message"></label>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+
+            </form>
+
+            <div class="text-left text-md-left">
+                <a class="btn btn-secondary" onclick="document.getElementById('contact-form').submit();">Send</a>
+            </div>
+            <div class="status"></div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-3 text-left">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p style="color: black;">Skolgatan 19, Vingåker, Sweden</p>
+                </li>
+
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p style="color: black;"> 072 150 9598</p>
+                </li>
+
+                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p style="color: black;">wemigliari@gmail.com</p>
+                </li>
+            </ul>
+        </div>
+        <!--Grid column-->
+
+    </div>
+</section>
+    </div>
+<!--Section: Contact v.2-->
+
+<footer>
+  <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="services.html">Web design</a></li>
+                            <li><a href="services.html">Development</a></li>
+                            <li><a href="services.html">Data Analytics & B2B</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Projects</h3>
+                        <ul>
+                          <li><a href="services.html">APIs</a></li>
+                          <li><a href="services.html">Chats & AI</a></li>
+                          <li><a href="services.html">Lab Experiments</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>K&R</h3>
+                        <p>Our main goal is to create intuitive and easy-going webpages to increase the users experience and interface. We invest much time in research to understand the needs of people while they navigate on the internet. One of our assets is the way we explore images, videos and reels. For more information, contact us.</p>
+                    </div>
+                    <div class="col item social"><a class="active" href="https://github.com/wemigliari" target="_blank"><i class="fa fa-1x fab fa-github" style="color:white;"></i></a>
+                      <a href="https://rpubs.com/wemigliari" target="_blank"><i class="fa fa-1x fab fa-r-project" style="color:white;"></i></a>
+                      <a class="active" href="https://www.python.org/" target="_blank"><i class="fa fa-1x fab fa-python" style="color:white;"></i></a>
+                        <a href="https://www.instagram.com/wemigliari/" target="_blank"><i class="icon ion-social-instagram"></i></a>
+                    </div>
+                </div>
+                <p class="copyright">&copy; K&R | W. Migliari</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</footer>
+
+  </body>
+</html>
